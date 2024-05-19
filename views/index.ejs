@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title><%= locals.title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1><%= locals.title %></h1>
+    <% message.forEach(message => { %>
+     <p>user : <%= message.user %></p>
+     <p>text : <%= message.text %></p>
+     <p>date : <%= message.added %></p>
+     <br><br>
+    <% }) %>
+
+     <a href="/new"><h4>add new author and message</h4></a>
+
+
   </body>
 </html>
